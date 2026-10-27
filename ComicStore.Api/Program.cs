@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1) KẾT NỐI DATABASE — đọc ConnectionStrings:DefaultConnection từ appsettings.json,
+// 1) KẾT NỐI DATABASE - đọc ConnectionStrings:DefaultConnection từ appsettings.json,
 //    user-secrets (dotnet user-secrets set) hoặc biến môi trường ConnectionStrings__DefaultConnection.
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -13,7 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// 3) CORS — cho phép Front-end (React/Vite) gọi API bằng Axios.
+// 3) CORS - cho phép Front-end (React/Vite) gọi API bằng Axios.
 var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
                      ?? new[] { "http://localhost:5173" };
 builder.Services.AddCors(options => options.AddPolicy("FrontendPolicy", policy => policy

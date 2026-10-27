@@ -38,7 +38,7 @@ public class CartController : ControllerBase
         });
     }
 
-    // POST: api/cart — thêm (hoặc cộng dồn) một truyện vào giỏ.
+    // POST: api/cart - thêm (hoặc cộng dồn) một truyện vào giỏ.
     [HttpPost]
     public async Task<ActionResult<CartItemResponse>> Add([FromBody] CartAddRequest request)
     {
@@ -74,7 +74,7 @@ public class CartController : ControllerBase
         return CreatedAtAction(nameof(GetByUser), new { userId = request.UserId }, existing.ToResponse());
     }
 
-    // PUT: api/cart/5 — cập nhật số lượng.
+    // PUT: api/cart/5 - cập nhật số lượng.
     [HttpPut("{id:int}")]
     public async Task<ActionResult<CartItemResponse>> Update(int id, [FromBody] CartUpdateRequest request)
     {
@@ -92,7 +92,7 @@ public class CartController : ControllerBase
         return Ok(item.ToResponse());
     }
 
-    // DELETE: api/cart/5 — xóa một mục trong giỏ.
+    // DELETE: api/cart/5 - xóa một mục trong giỏ.
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> Delete(int id)
     {
@@ -105,7 +105,7 @@ public class CartController : ControllerBase
         return NoContent();
     }
 
-    // DELETE: api/cart?userId=1 — xóa sạch giỏ của một người dùng.
+    // DELETE: api/cart?userId=1 - xóa sạch giỏ của một người dùng.
     [HttpDelete]
     public async Task<IActionResult> Clear([FromQuery] int userId)
     {

@@ -44,7 +44,7 @@ export default api;
 | Cập nhật | `api.put(url, data, config)` | `api.put("/comics/1", body)` |
 | Xóa | `api.delete(url, config)` | `api.delete("/comics/1")` |
 
-### GET — đọc danh sách / chi tiết
+### GET - đọc danh sách / chi tiết
 
 ```js
 import api from "./api/client";
@@ -60,7 +60,7 @@ const { data } = await getComics({ status: "Approved" });
 console.log(data); // mảng ComicResponse
 ```
 
-### POST — tạo mới
+### POST - tạo mới
 
 ```js
 export const createComic = (comic) =>
@@ -81,7 +81,7 @@ const { data } = await createComic({ title: "Avengers #1", price: 120000, stock:
 console.log(data.id); // id vừa tạo (HTTP 201)
 ```
 
-### PUT — cập nhật
+### PUT - cập nhật
 
 ```js
 export const updateComic = (id, comic) =>
@@ -94,7 +94,7 @@ export const updateComic = (id, comic) =>
 await updateComic(1, { title: "Avengers #1 (Revised)", price: 130000, stock: 12, status: "Approved" });
 ```
 
-### DELETE — xóa
+### DELETE - xóa
 
 ```js
 export const deleteComic = (id) => api.delete(`/comics/${id}`);
@@ -158,7 +158,7 @@ try {
 }
 ```
 
-## 4. CORS — điều kiện để Axios gọi được
+## 4. CORS - điều kiện để Axios gọi được
 
 Backend đã bật chính sách `FrontendPolicy` trong `Program.cs`. Origins được khai báo trong
 `appsettings.json`:

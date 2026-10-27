@@ -47,7 +47,7 @@ public class OrdersController : ControllerBase
         return order is null ? NotFound(new { message = $"Không tìm thấy đơn hàng id={id}" }) : Ok(order.ToResponse());
     }
 
-    // POST: api/orders — server tự tính giá và tổng tiền từ database.
+    // POST: api/orders - server tự tính giá và tổng tiền từ database.
     [HttpPost]
     public async Task<ActionResult<OrderResponse>> Create([FromBody] OrderCreateRequest request)
     {
@@ -97,7 +97,7 @@ public class OrdersController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = order.Id }, order.ToResponse());
     }
 
-    // PUT: api/orders/5 — cập nhật trạng thái / thông tin giao hàng.
+    // PUT: api/orders/5 - cập nhật trạng thái / thông tin giao hàng.
     [HttpPut("{id:int}")]
     public async Task<ActionResult<OrderResponse>> Update(int id, [FromBody] OrderUpdateRequest request)
     {

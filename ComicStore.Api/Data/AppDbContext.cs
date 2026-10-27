@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 namespace ComicStore.Api.Data;
 
 /// <summary>
-/// DbContext kết nối PostgreSQL qua Npgsql — nơi khai báo DbSet và cấu hình
+/// DbContext kết nối PostgreSQL qua Npgsql - nơi khai báo DbSet và cấu hình
 /// quan hệ (Fluent API) cho EF Core.
 /// </summary>
 public class AppDbContext : DbContext
